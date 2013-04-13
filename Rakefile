@@ -15,13 +15,16 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "image-fun"
+  gem.files.include 'lib/image_fun.rb'
   gem.homepage = "http://github.com/kdmny/image-fun"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A utility to download remote images and, optionally, send them to Cloudinary.}
+  gem.description = %Q{A utility to download remote images and, optionally, send them to Cloudinary.}
   gem.email = "kdmny30@gmail.com"
-  gem.authors = ["Kale McNaney"]
+  gem.authors = ["K$"]
+  gem.version = '0.0.1'
   # dependencies defined in Gemfile
+  gem.add_dependency 'cloudinary'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -32,13 +35,6 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
 
 task :default => :test
 
